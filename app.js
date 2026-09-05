@@ -2,7 +2,7 @@ import { formatAmount, formatDate, loadLatestSnapshot } from "./data-utils.js";
 
 const LINKS = [
   { label: "Institutional Metrics Dashboard", url: "https://happydao.github.io/nummus-nav-dashboard/", primary: true },
-  { label: "Buy in Jupiter", url: "https://jup.ag/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" },
+  { label: "Buy on Jupiter", url: "https://jup.ag/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" },
   { label: "X", url: "https://x.com/NummusMemeCoin", compact: true },
   { label: "Telegram", url: "https://t.me/nummusmemecoin" },
   { label: "CoinMarketCap", url: "https://coinmarketcap.com/currencies/nummus-aeternitas/" },
