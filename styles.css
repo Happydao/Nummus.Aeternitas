@@ -65,7 +65,7 @@ a { color: inherit; }
 
 .masthead { display: flex; min-height: clamp(108px, 14vh, 148px); align-items: flex-start; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 24px; margin-top: 12px; text-decoration: none; font-weight: 650; }
-.brand img { width: clamp(132px, 17vh, 190px); height: auto; border-radius: 50%; filter: drop-shadow(0 14px 40px rgba(0,0,0,.54)); }
+.brand img { width: clamp(132px, 17vh, 190px); height: auto; border-radius: 50%; outline: 1px solid rgba(220, 192, 120, .58); outline-offset: 6px; filter: drop-shadow(0 14px 40px rgba(0,0,0,.54)) drop-shadow(0 0 14px rgba(220,192,120,.12)); }
 .brand-name { display: grid; gap: 7px; color: var(--ink); font-size: clamp(1.45rem, 1.85vw, 2rem); line-height: .92; letter-spacing: .3em; }
 .network { margin: 5px 0 0; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .18em; }
 .network span, .status span { display: inline-block; width: 6px; height: 6px; margin-right: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(220,192,120,.09); }
@@ -127,6 +127,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
 }
 
 @media (min-width: 981px) {
+  .hero-message { transform: translateY(-34px); }
   .metrics { transform: translateY(-63px); }
 }
 
