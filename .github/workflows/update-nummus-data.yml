@@ -1,0 +1,54 @@
+name: Update NUMMUS treasury data
+
+on:
+  repository_dispatch:
+    types: [nummus_data_updated]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-nummus-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download uncached source dataset
+        shell: bash
+        run: |
+          set -euo pipefail
+          timestamp="$(date +%s)"
+          curl --fail --show-error --silent --location \
+            --retry 3 --retry-delay 2 \
+            "https://raw.githubusercontent.com/Happydao/nummus-nav-dashboard/main/data/history.json?t=${timestamp}" \
+            --output "${RUNNER_TEMP}/history.json"
+
+      - name: Validate and import latest values
+        run: node scripts/import-history.mjs "${RUNNER_TEMP}/history.json" data/latest.json
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build production site
+        run: npm run build
+
+      - name: Commit changed snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/latest.json; then
+            echo "Dataset is not newer; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json
+          git commit -m "Update NUMMUS treasury data"
+          git push

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#071419">
+    <meta name="description" content="NUMMUS is anchored to a transparent Bitcoin reserve and a verifiable on-chain burn policy.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NUMMUS — Verifiable scarcity">
+    <meta property="og:description" content="A transparent Bitcoin reserve and verifiable on-chain burn policy, built on Solana.">
+    <meta property="og:image" content="https://happydao.github.io/Nummus.Aeternitas/assets/og.png">
+    <meta property="og:url" content="https://happydao.github.io/Nummus.Aeternitas/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NUMMUS — Verifiable scarcity">
+    <meta name="twitter:description" content="A transparent Bitcoin reserve and verifiable on-chain burn policy, built on Solana.">
+    <meta name="twitter:image" content="https://happydao.github.io/Nummus.Aeternitas/assets/og.png">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="preload" href="./assets/nummus-logo.png" as="image">
+    <link rel="stylesheet" href="./styles.css">
+    <title>NUMMUS — Verifiable scarcity</title>
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"><span></span><span></span><span></span></div>
+    <main class="shell">
+      <header class="masthead">
+        <a class="brand" href="./" aria-label="NUMMUS home">
+          <img src="./assets/nummus-logo.png" alt="" width="72" height="72">
+          <span>NUMMUS</span>
+        </a>
+        <p class="network"><span></span> Built on Solana · Anchored to Bitcoin</p>
+      </header>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Aeternitas · Verifiable scarcity</p>
+          <h1 id="hero-title">Reserved in Bitcoin.<br><em>Reduced on-chain.</em></h1>
+          <p class="intro">NUMMUS is tied to a transparent Bitcoin reserve and a verifiable burn policy—designed for clarity, scarcity, and permanence.</p>
+        </div>
+
+        <div class="metrics" aria-label="Verified NUMMUS treasury metrics">
+          <article class="metric-card">
+            <p class="metric-label"><span class="metric-index">01</span> Vault reserve</p>
+            <p class="metric-value"><span id="tbtc-value">—</span> <small>tBTC</small></p>
+            <p class="metric-context">Held in the Vault on Solana</p>
+            <p class="metric-date">Observation <time id="tbtc-date">—</time></p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label"><span class="metric-index">02</span> Verified burn</p>
+            <p class="metric-value"><span id="burn-value">—</span> <small>NUMMUS</small></p>
+            <p class="metric-context">Cumulatively burned on-chain</p>
+            <p class="metric-date">Last burn <time id="burn-date">—</time></p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="verification">
+          <p><span class="seal" aria-hidden="true">✓</span> Treasury and burn data sourced from verified on-chain records.</p>
+          <p class="status" id="data-status" role="status" aria-live="polite"><span></span> Loading verified data…</p>
+        </div>
+        <nav class="links" id="external-links" aria-label="Official links"></nav>
+      </footer>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
