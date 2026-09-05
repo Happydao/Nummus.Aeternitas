@@ -106,6 +106,13 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
 }
 
 @media (min-width: 981px) {
+  .hero-copy { isolation: isolate; }
+  .hero-copy::before {
+    content: ""; position: absolute; z-index: -1; pointer-events: none;
+    inset: -38px -58px -28px -46px;
+    background: radial-gradient(ellipse at 38% 45%, rgba(3,12,16,.66) 0%, rgba(3,12,16,.4) 54%, transparent 84%);
+    filter: blur(15px);
+  }
   .hero-message { transform: translateY(-34px); }
   .metrics { transform: translateY(-63px); }
 }
@@ -114,6 +121,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   html, body { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
   body { min-height: 100dvh; }
   .shell { display: block; height: auto; min-height: 100dvh; overflow: visible; padding: 20px 18px 26px; }
+  .page-art::after { content: ""; position: absolute; inset: 0; background: rgba(3,12,16,.48); }
   .page-art img { object-position: 48% center; transform: translateX(2vw) scale(1.08); }
   .masthead { min-height: 0; align-items: flex-start; }
   .brand { gap: 16px; margin-top: 0; }
