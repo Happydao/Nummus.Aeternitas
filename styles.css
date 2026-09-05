@@ -26,37 +26,10 @@ body {
 a { color: inherit; }
 
 .page-art { position: fixed; inset: 0; z-index: 0; width: 100vw; height: 100dvh; margin: 0; overflow: hidden; }
-.page-art::after {
-  content: ""; position: absolute; inset: 0;
-  background:
-    linear-gradient(90deg, rgba(3, 12, 16, .93) 0%, rgba(3, 12, 16, .66) 35%, rgba(3, 12, 16, .12) 68%, rgba(3, 12, 16, .46) 100%),
-    linear-gradient(0deg, rgba(3, 12, 16, .8) 0%, transparent 34%, rgba(3, 12, 16, .42) 100%);
-}
 .page-art img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: 58% center;
-  transform: translateX(12vw) scale(1.28);
-  transform-origin: center;
-  filter: saturate(.78) contrast(1.04);
+  object-fit: cover; object-position: center;
 }
-.atmosphere { position: fixed; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
-.atmosphere::before {
-  content: "";
-  position: absolute; inset: 0;
-  opacity: .17;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.36'/%3E%3C/svg%3E");
-  mix-blend-mode: soft-light;
-}
-.atmosphere::after {
-  content: ""; position: absolute; width: 56vw; aspect-ratio: 1; right: -15vw; top: 7vh;
-  border: 1px solid rgba(220, 192, 120, .07); border-radius: 50%;
-  box-shadow: 0 0 0 8vw rgba(220,192,120,.022), 0 0 0 16vw rgba(220,192,120,.015);
-}
-.atmosphere span { position: absolute; left: -8%; width: 116%; height: 1px; background: linear-gradient(90deg, transparent, rgba(220,192,120,.28), transparent); }
-.atmosphere span:nth-child(1) { top: 34%; transform: rotate(-2deg); }
-.atmosphere span:nth-child(2) { top: 37%; opacity: .4; transform: rotate(1deg); }
-.atmosphere span:nth-child(3) { top: 71%; opacity: .18; }
-
 .shell {
   position: relative; z-index: 2; width: 100%; height: 100dvh; min-height: 0; margin: 0 auto; overflow: hidden;
   padding: clamp(22px, 3vh, 38px) clamp(28px, 6vw, 124px) clamp(22px, 3vh, 36px);
@@ -117,7 +90,7 @@ h1 em { color: var(--gold-pale); font-weight: 400; }
 a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
 
 @media (max-width: 980px) {
-  .page-art img { transform: translateX(3vw) scale(1.1); }
+  .page-art img { object-position: center; transform: none; }
   .shell { height: 100dvh; min-height: 0; }
   .hero { grid-template-columns: 1fr; align-content: center; gap: 24px; }
   h1 { font-size: clamp(3.3rem, 10vw, 5.8rem); }
@@ -139,8 +112,6 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   html, body { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: auto; }
   body { min-height: 100dvh; }
   .shell { display: block; height: auto; min-height: 100dvh; overflow: visible; padding: 20px 18px 26px; }
-  .page-art img { object-position: 57% center; transform: scale(1.08); }
-  .page-art::after { background: linear-gradient(0deg, rgba(3,12,16,.96) 0%, rgba(3,12,16,.83) 62%, rgba(3,12,16,.56) 100%); }
   .masthead { min-height: 0; align-items: flex-start; }
   .brand { gap: 16px; margin-top: 0; }
   .brand img { width: 92px; outline-offset: 4px; }
