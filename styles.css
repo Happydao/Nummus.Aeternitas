@@ -66,7 +66,7 @@ a { color: inherit; }
 
 .hero {
   align-self: stretch; min-height: 0; height: 100%; display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 410px); align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px); align-items: center;
   gap: clamp(52px, 8vw, 150px);
 }
 .hero-copy, .metrics { position: relative; z-index: 1; }
@@ -78,14 +78,14 @@ h1 em { color: var(--gold-pale); font-weight: 400; }
 .thesis { display: flex; align-items: center; gap: 13px; margin: 25px 0 0; color: #899a94; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
 .thesis span { padding: 7px 10px; border: 1px solid var(--line); color: var(--gold-pale); }
 
-.metrics { justify-self: end; width: 100%; display: grid; gap: 10px; }
-.metric-card { position: relative; padding: clamp(14px, 1.8vh, 20px) clamp(18px, 1.7vw, 24px); border: 1px solid rgba(220,192,120,.2); border-radius: 18px; background: rgba(4, 14, 18, .43); box-shadow: inset 0 1px 0 rgba(255,255,255,.025); backdrop-filter: blur(6px); }
+.metrics { justify-self: end; width: auto; display: grid; justify-items: end; gap: 9px; }
+.metric-card { position: relative; width: max-content; max-width: 100%; padding: clamp(11px, 1.35vh, 15px) clamp(14px, 1.3vw, 18px); border: 1px solid rgba(220,192,120,.22); border-radius: 16px; background: rgba(4, 14, 18, .28); box-shadow: inset 0 1px 0 rgba(255,255,255,.025); text-align: right; backdrop-filter: blur(3px); }
 .metric-label { margin: 0 0 9px; color: #aab7b2; font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; }
-.metric-value { margin: 0; white-space: nowrap; font-size: clamp(2rem, 2.85vw, 3.25rem); line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums lining-nums; }
+.metric-value { display: flex; align-items: baseline; justify-content: flex-end; gap: 8px; margin: 0; white-space: nowrap; font-size: clamp(1.8rem, 2.5vw, 2.85rem); line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums lining-nums; }
 .metric-value small { color: var(--gold); font-size: .22em; letter-spacing: .16em; font-weight: 650; }
 .metric-context { margin: 8px 0 0; color: #c5cfca; font-family: Georgia, serif; font-style: italic; font-size: .85rem; }
 .metric-date { margin: 6px 0 0; color: #7f918b; font-size: .53rem; letter-spacing: .075em; text-transform: uppercase; }
-.supply-card .metric-value { font-size: clamp(1.8rem, 2.35vw, 2.7rem); }
+.supply-card .metric-value { font-size: clamp(1.65rem, 2.05vw, 2.35rem); }
 
 .footer { display: grid; grid-template-columns: 1fr; align-items: end; gap: 13px; }
 .footer-meta { grid-row: 2; display: flex; align-items: end; justify-content: space-between; gap: 32px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.14); }
@@ -94,11 +94,11 @@ h1 em { color: var(--gold-pale); font-weight: 400; }
 .status span { width: 5px; height: 5px; margin-right: 7px; background: #88b4a3; box-shadow: none; }
 .status.is-stale span, .status.is-fallback span { background: #d1a95d; }
 .seal { display: inline-grid; place-items: center; width: 18px; height: 18px; margin-right: 8px; border: 1px solid var(--line); border-radius: 50%; color: var(--gold); }
-.links { grid-row: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-.links a { min-width: 136px; padding: 15px 22px; border: 1px solid rgba(255,255,255,.2); border-radius: 99px; color: #e1e7e3; background: rgba(4,14,18,.4); text-align: center; text-decoration: none; font-size: .72rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; backdrop-filter: blur(8px); transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+.links { grid-row: 1; width: 100%; display: flex; flex-wrap: nowrap; align-items: stretch; justify-content: flex-start; gap: 12px; }
+.links a { order: 1; min-width: 136px; min-height: 50px; display: inline-flex; align-items: center; justify-content: center; padding: 15px 22px; border: 1px solid rgba(255,255,255,.2); border-radius: 99px; color: #e1e7e3; background: rgba(4,14,18,.4); text-align: center; text-decoration: none; font-size: .72rem; font-weight: 600; line-height: 1.15; letter-spacing: .13em; text-transform: uppercase; backdrop-filter: blur(8px); transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
 .links a:hover { color: var(--gold-pale); border-color: var(--line); background: rgba(220,192,120,.06); }
 .links a:hover { transform: translateY(-2px); }
-.links a.is-primary { min-width: 290px; padding: 17px 28px; border-color: var(--gold); color: #091317; background: linear-gradient(135deg, var(--gold-pale), #c9a85c); box-shadow: 0 10px 34px rgba(220,192,120,.18); }
+.links a.is-primary { order: 2; min-width: 290px; margin-left: auto; padding: 17px 28px; border-color: var(--gold); color: #091317; background: linear-gradient(135deg, var(--gold-pale), #c9a85c); box-shadow: 0 10px 34px rgba(220,192,120,.18); }
 .links a.is-primary:hover { color: #050b0d; border-color: #f8e9bd; background: linear-gradient(135deg, #fff1c9, #d7b76d); }
 .contract { display: grid; justify-items: end; gap: 6px; margin: 0; color: #82918d; text-align: right; }
 .contract span { font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; }
@@ -110,6 +110,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .hero { grid-template-columns: 1fr; align-content: center; gap: 24px; }
   h1 { font-size: clamp(3.3rem, 10vw, 5.8rem); }
   .metrics { justify-self: stretch; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .metric-card { width: 100%; }
   .supply-card { grid-column: 1 / -1; }
   .metric-value { font-size: clamp(2.1rem, 5.7vw, 3.7rem); }
   .footer { grid-template-columns: 1fr; justify-items: stretch; }
@@ -151,9 +152,9 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .contract { max-width: 46%; gap: 4px; }
   .contract span { font-size: .45rem; }
   .contract code { display: block; max-width: 100%; overflow: hidden; font-size: .48rem; text-overflow: ellipsis; white-space: nowrap; }
-  .links { width: 100%; gap: 9px; }
+  .links { width: 100%; flex-wrap: wrap; gap: 9px; }
   .links a { flex: 1 1 28%; min-width: 84px; padding: 9px 6px; font-size: .52rem; }
-  .links a.is-primary { flex-basis: 100%; min-width: 100%; padding: 11px 10px; }
+  .links a.is-primary { order: 0; flex-basis: 100%; min-width: 100%; margin-left: 0; padding: 11px 10px; }
 }
 
 @media (max-height: 760px) and (min-width: 981px) {
