@@ -167,7 +167,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .contract span { font-size: .45rem; }
   .contract code { display: block; max-width: 100%; overflow: hidden; font-size: .48rem; text-overflow: ellipsis; white-space: nowrap; }
   .links { width: 100%; flex-wrap: wrap; gap: 9px; }
-  .links a { flex: 1 1 28%; min-width: 84px; padding: 9px 6px; font-size: .52rem; }
+  .links a { flex: 1 1 40%; min-width: 84px; padding: 9px 6px; font-size: .52rem; }
   .links a.is-primary { order: 0; flex-basis: 100%; min-width: 100%; margin-left: 0; padding: 11px 10px; }
 }
 

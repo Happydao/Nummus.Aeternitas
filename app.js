@@ -2,8 +2,9 @@ import { formatAmount, formatDate, loadLatestSnapshot } from "./data-utils.js";
 
 const LINKS = [
   { label: "Institutional Metrics Dashboard", url: "https://happydao.github.io/nummus-nav-dashboard/", primary: true },
-  { label: "Jupiter", url: "https://jup.ag/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" },
-  { label: "X / Twitter", url: "https://x.com/NummusMemeCoin" },
+  { label: "Buy in Jupiter", url: "https://jup.ag/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" },
+  { label: "X", url: "https://x.com/NummusMemeCoin" },
+  { label: "CoinMarketCap", url: "https://coinmarketcap.com/currencies/nummus-aeternitas/" },
   // Add the verified URLs here when they become available.
   { label: "Vault on Solscan", url: null },
   { label: "RugCheck", url: "https://rugcheck.xyz/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" }
