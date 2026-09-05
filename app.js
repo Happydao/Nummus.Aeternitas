@@ -1,7 +1,7 @@
 import { formatAmount, formatDate, loadLatestSnapshot } from "./data-utils.js";
 
 const LINKS = [
-  { label: "Dashboard", url: "https://happydao.github.io/nummus-nav-dashboard/" },
+  { label: "Institutional Metrics Dashboard", url: "https://happydao.github.io/nummus-nav-dashboard/", primary: true },
   { label: "Jupiter", url: "https://jup.ag/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" },
   { label: "X / Twitter", url: "https://x.com/NummusMemeCoin" },
   // Add the verified URLs here when they become available.
@@ -16,6 +16,7 @@ for (const item of LINKS.filter(({ url }) => Boolean(url))) {
   anchor.target = "_blank";
   anchor.rel = "noopener noreferrer";
   anchor.textContent = item.label;
+  if (item.primary) anchor.classList.add("is-primary");
   links.append(anchor);
 }
 

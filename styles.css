@@ -58,8 +58,9 @@ a { color: inherit; }
 }
 
 .masthead { display: flex; min-height: clamp(108px, 14vh, 148px); align-items: flex-start; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 24px; text-decoration: none; font-size: clamp(1.05rem, 1.35vw, 1.45rem); font-weight: 650; letter-spacing: .28em; }
-.brand img { width: clamp(132px, 17vh, 190px); height: auto; margin-top: -8px; border-radius: 50%; filter: drop-shadow(0 14px 40px rgba(0,0,0,.54)); }
+.brand { display: inline-flex; align-items: center; gap: 24px; margin-top: 12px; text-decoration: none; font-weight: 650; }
+.brand img { width: clamp(132px, 17vh, 190px); height: auto; border-radius: 50%; filter: drop-shadow(0 14px 40px rgba(0,0,0,.54)); }
+.brand-name { display: grid; gap: 7px; color: var(--ink); font-size: clamp(1.45rem, 1.85vw, 2rem); line-height: .92; letter-spacing: .3em; }
 .network { margin: 5px 0 0; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .18em; }
 .network span, .status span { display: inline-block; width: 6px; height: 6px; margin-right: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(220,192,120,.09); }
 
@@ -87,7 +88,7 @@ h1 em { color: var(--gold-pale); font-weight: 400; }
 .supply-card .metric-value { font-size: clamp(1.8rem, 2.35vw, 2.7rem); }
 
 .footer { display: grid; grid-template-columns: 1fr; align-items: end; gap: 13px; }
-.verification { grid-row: 2; justify-self: stretch; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.14); text-align: left; }
+.footer-meta { grid-row: 2; display: flex; align-items: end; justify-content: space-between; gap: 32px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.14); }
 .verification p { margin: 0; color: var(--muted); font-size: .7rem; letter-spacing: .035em; }
 .verification .status { margin-top: 8px; color: #71827d; font-size: .64rem; }
 .status span { width: 5px; height: 5px; margin-right: 7px; background: #88b4a3; box-shadow: none; }
@@ -97,6 +98,11 @@ h1 em { color: var(--gold-pale); font-weight: 400; }
 .links a { min-width: 136px; padding: 15px 22px; border: 1px solid rgba(255,255,255,.2); border-radius: 99px; color: #e1e7e3; background: rgba(4,14,18,.4); text-align: center; text-decoration: none; font-size: .72rem; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; backdrop-filter: blur(8px); transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
 .links a:hover { color: var(--gold-pale); border-color: var(--line); background: rgba(220,192,120,.06); }
 .links a:hover { transform: translateY(-2px); }
+.links a.is-primary { min-width: 290px; padding: 17px 28px; border-color: var(--gold); color: #091317; background: linear-gradient(135deg, var(--gold-pale), #c9a85c); box-shadow: 0 10px 34px rgba(220,192,120,.18); }
+.links a.is-primary:hover { color: #050b0d; border-color: #f8e9bd; background: linear-gradient(135deg, #fff1c9, #d7b76d); }
+.contract { display: grid; justify-items: end; gap: 6px; margin: 0; color: #82918d; text-align: right; }
+.contract span { font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; }
+.contract code { color: #b8c2be; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .68rem; letter-spacing: .035em; }
 a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
 
 @media (max-width: 980px) {
@@ -108,7 +114,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .metric-value { font-size: clamp(2.1rem, 5.7vw, 3.7rem); }
   .footer { grid-template-columns: 1fr; justify-items: stretch; }
   .links { grid-column: 1; grid-row: 1; }
-  .verification { grid-row: 2; text-align: left; }
+  .footer-meta { grid-row: 2; }
 }
 
 @media (max-width: 680px) {
@@ -117,8 +123,9 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .page-art::after { background: linear-gradient(0deg, rgba(3,12,16,.96) 0%, rgba(3,12,16,.72) 58%, rgba(3,12,16,.42) 100%); }
   .masthead { align-items: flex-start; }
   .masthead { min-height: 76px; }
-  .brand { gap: 12px; font-size: .77rem; letter-spacing: .15em; }
-  .brand img { width: 82px; margin-top: -6px; }
+  .brand { gap: 12px; margin-top: 5px; }
+  .brand img { width: 82px; }
+  .brand-name { gap: 4px; font-size: .92rem; letter-spacing: .18em; }
   .network { display: none; }
   .hero { display: grid; align-content: center; gap: 14px; min-height: 0; }
   .eyebrow { margin-bottom: 9px; font-size: .52rem; }
@@ -138,16 +145,23 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .metric-context { margin-top: 7px; font-size: .67rem; line-height: 1.25; }
   .metric-date { margin-top: 5px; font-size: .45rem; }
   .footer { gap: 8px; padding-top: 7px; }
+  .footer-meta { align-items: flex-end; gap: 10px; padding-top: 7px; }
   .verification p { font-size: .54rem; }
   .verification .status { margin-top: 4px; font-size: .5rem; }
+  .contract { max-width: 46%; gap: 4px; }
+  .contract span { font-size: .45rem; }
+  .contract code { display: block; max-width: 100%; overflow: hidden; font-size: .48rem; text-overflow: ellipsis; white-space: nowrap; }
   .links { width: 100%; gap: 9px; }
-  .links a { flex: 1 1 42%; min-width: 120px; padding: 10px 7px; font-size: .56rem; }
+  .links a { flex: 1 1 28%; min-width: 84px; padding: 9px 6px; font-size: .52rem; }
+  .links a.is-primary { flex-basis: 100%; min-width: 100%; padding: 11px 10px; }
 }
 
 @media (max-height: 760px) and (min-width: 981px) {
   .shell { padding-top: 15px; padding-bottom: 14px; gap: 10px; }
   .masthead { min-height: 92px; }
+  .brand { margin-top: 5px; }
   .brand img { width: 124px; }
+  .brand-name { font-size: 1.35rem; }
   .hero { min-height: 0; gap: 60px; }
   h1 { font-size: clamp(3.2rem, 4.6vw, 5rem); }
   .intro { margin-top: 17px; }
@@ -156,7 +170,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .supply-card .metric-value { font-size: clamp(1.65rem, 2.15vw, 2.35rem); }
   .footer { gap: 8px; }
   .links a { padding-top: 11px; padding-bottom: 11px; }
-  .verification { padding-top: 8px; }
+  .footer-meta { padding-top: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
