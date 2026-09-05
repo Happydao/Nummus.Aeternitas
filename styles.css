@@ -11,7 +11,7 @@
 
 * { box-sizing: border-box; }
 
-html, body { margin: 0; min-height: 100%; background: var(--deep); }
+html, body { width: 100%; height: 100%; margin: 0; background: var(--deep); overflow: hidden; }
 
 body {
   color: var(--ink);
@@ -20,12 +20,12 @@ body {
     radial-gradient(ellipse at 82% 15%, rgba(196, 160, 80, .11), transparent 28%),
     radial-gradient(ellipse at 50% 110%, rgba(18, 91, 99, .28), transparent 48%),
     linear-gradient(145deg, #08171c 0%, #061116 54%, #0b2025 100%);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 a { color: inherit; }
 
-.page-art { position: fixed; inset: 0; z-index: 0; margin: 0; overflow: hidden; }
+.page-art { position: fixed; inset: 0; z-index: 0; width: 100vw; height: 100dvh; margin: 0; overflow: hidden; }
 .page-art::after {
   content: ""; position: absolute; inset: 0;
   background:
@@ -52,9 +52,9 @@ a { color: inherit; }
 .atmosphere span:nth-child(3) { top: 71%; opacity: .18; }
 
 .shell {
-  position: relative; z-index: 2; min-height: 100dvh; width: 100%; margin: 0 auto;
+  position: relative; z-index: 2; width: 100%; height: 100dvh; min-height: 0; margin: 0 auto; overflow: hidden;
   padding: clamp(22px, 3vh, 38px) clamp(28px, 6vw, 124px) clamp(22px, 3vh, 36px);
-  display: grid; grid-template-rows: auto 1fr auto; gap: clamp(18px, 2.5vh, 30px);
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: clamp(14px, 2vh, 24px);
 }
 
 .masthead { display: flex; align-items: center; justify-content: space-between; }
@@ -64,7 +64,7 @@ a { color: inherit; }
 .network span, .status span { display: inline-block; width: 6px; height: 6px; margin-right: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(220,192,120,.09); }
 
 .hero {
-  align-self: center; min-height: clamp(430px, 59vh, 590px); display: grid;
+  align-self: stretch; min-height: 0; height: 100%; display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 410px); align-items: center;
   gap: clamp(52px, 8vw, 150px);
 }
@@ -100,8 +100,8 @@ h1 em { color: var(--gold-pale); font-weight: 400; }
 a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
 
 @media (max-width: 980px) {
-  .shell { min-height: 100dvh; }
-  .hero { grid-template-columns: 1fr; align-items: start; gap: 38px; }
+  .shell { height: 100dvh; min-height: 0; }
+  .hero { grid-template-columns: 1fr; align-content: center; gap: 24px; }
   h1 { font-size: clamp(3.3rem, 10vw, 5.8rem); }
   .metrics { justify-self: stretch; grid-template-columns: 1fr 1fr; gap: 28px; }
   .metric-card { border-bottom: 0; }
@@ -112,29 +112,37 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
 }
 
 @media (max-width: 680px) {
-  .shell { padding: 18px 20px 26px; gap: 30px; }
+  .shell { padding: 12px 14px 14px; gap: 10px; }
   .page-art img { object-position: 66% center; }
   .page-art::after { background: linear-gradient(0deg, rgba(3,12,16,.96) 0%, rgba(3,12,16,.72) 58%, rgba(3,12,16,.42) 100%); }
   .masthead { align-items: flex-start; }
-  .brand { font-size: 1rem; letter-spacing: .22em; }
-  .brand img { width: 72px; }
-  .network { max-width: 130px; padding-top: 7px; text-align: right; font-size: .56rem; line-height: 1.55; letter-spacing: .11em; }
-  .hero { display: grid; gap: 34px; min-height: auto; }
-  .eyebrow { margin-bottom: 16px; font-size: .62rem; }
-  h1 { font-size: clamp(3rem, 14.5vw, 4.8rem); line-height: .94; }
-  .intro { margin-top: 24px; font-size: .95rem; line-height: 1.62; }
-  .metrics { grid-template-columns: 1fr; gap: 0; margin: 0; padding: 0 18px; }
-  .metric-card { padding: 23px 0 22px; }
-  .metric-card:first-child { border-bottom: 1px solid var(--line); }
-  .metric-value { font-size: clamp(2.2rem, 10vw, 3.4rem); }
-  .footer { gap: 24px; }
+  .brand { gap: 11px; font-size: .84rem; letter-spacing: .2em; }
+  .brand img { width: 56px; }
+  .network { display: none; }
+  .hero { display: grid; align-content: center; gap: 14px; min-height: 0; }
+  .eyebrow { margin-bottom: 9px; font-size: .52rem; }
+  h1 { font-size: clamp(2.45rem, 12vw, 3.25rem); line-height: .9; }
+  .intro { margin-top: 13px; max-width: 94%; font-size: .76rem; line-height: 1.43; }
+  .thesis { margin-top: 12px; gap: 8px; font-size: .49rem; letter-spacing: .11em; }
+  .thesis span { padding: 5px 7px; }
+  .metrics { grid-template-columns: 1fr 1fr; gap: 0; margin: 0; padding: 0 10px; }
+  .metric-card { padding: 12px 8px; border-bottom: 0; }
+  .metric-card:first-child { border-right: 1px solid var(--line); }
+  .metric-label { gap: 6px; margin-bottom: 8px; font-size: .48rem; letter-spacing: .1em; }
+  .metric-value { font-size: clamp(1.3rem, 6.3vw, 1.7rem); }
+  .metric-value small { display: block; margin-top: 5px; font-size: .34em; }
+  .metric-context { margin-top: 7px; font-size: .67rem; line-height: 1.25; }
+  .metric-date { margin-top: 5px; font-size: .45rem; }
+  .footer { gap: 10px; padding-top: 9px; }
+  .verification p { font-size: .54rem; }
+  .verification .status { margin-top: 4px; font-size: .5rem; }
   .links { width: 100%; gap: 9px; }
-  .links a { flex: 1 1 30%; min-width: 96px; padding: 13px 10px; font-size: .62rem; }
+  .links a { flex: 1 1 30%; min-width: 92px; padding: 10px 7px; font-size: .56rem; }
 }
 
 @media (max-height: 760px) and (min-width: 981px) {
   .shell { padding-top: 22px; padding-bottom: 20px; gap: 18px; }
-  .hero { min-height: 430px; gap: 60px; }
+  .hero { min-height: 0; gap: 60px; }
   h1 { font-size: clamp(3.6rem, 5vw, 5.6rem); }
   .intro { margin-top: 22px; }
   .metric-card { padding: 19px 0 17px; }
