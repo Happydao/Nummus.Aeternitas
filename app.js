@@ -6,7 +6,7 @@ const LINKS = [
   { label: "X / Twitter", url: "https://x.com/NummusMemeCoin" },
   // Add the verified URLs here when they become available.
   { label: "Vault on Solscan", url: null },
-  { label: "RugCheck", url: null }
+  { label: "RugCheck", url: "https://rugcheck.xyz/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" }
 ];
 
 const links = document.querySelector("#external-links");

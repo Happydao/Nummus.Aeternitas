@@ -16,7 +16,7 @@
     <meta name="twitter:image" content="https://happydao.github.io/Nummus.Aeternitas/assets/og.png">
     <link rel="icon" type="image/png" href="./assets/favicon.png">
     <link rel="preload" href="./assets/nummus-logo.png" as="image">
-    <link rel="stylesheet" href="./styles.css?v=20260905-3">
+    <link rel="stylesheet" href="./styles.css?v=20260905-4">
     <title>NUMMUS — The Vault Coin</title>
   </head>
   <body>
@@ -28,7 +28,7 @@
       <header class="masthead">
         <a class="brand" href="./" aria-label="NUMMUS home">
           <img src="./assets/nummus-logo.png" alt="" width="72" height="72">
-          <span>NUMMUS</span>
+          <span>NUMMUS AETERNITAS</span>
         </a>
         <p class="network"><span></span> Built on Solana · Anchored to Bitcoin</p>
       </header>
@@ -37,34 +37,40 @@
         <div class="hero-copy">
           <p class="eyebrow">Introducing a new category</p>
           <h1 id="hero-title">Beyond the meme.<br><em>Into the vault.</em></h1>
-          <p class="intro">NUMMUS is evolving beyond the meme coin into a <strong>Vault Coin</strong>—an on-chain model anchored to a transparent Bitcoin reserve and disciplined by verifiable burns.</p>
+          <p class="intro">NUMMUS has evolved beyond the meme coin into a <strong>Vault Coin</strong>—an on-chain model anchored to a transparent Bitcoin reserve and disciplined by verifiable burns.</p>
           <p class="thesis"><span>Vault Coin</span> Reserve · Scarcity · Proof</p>
         </div>
 
-        <div class="metrics" aria-label="Verified NUMMUS treasury metrics">
+        <div class="metrics" aria-label="Verified NUMMUS reserve, burn, and supply metrics">
           <article class="metric-card">
-            <p class="metric-label"><span class="metric-index">01</span> Vault reserve</p>
+            <p class="metric-label">Vault reserve</p>
             <p class="metric-value"><span id="tbtc-value">—</span> <small>tBTC</small></p>
             <p class="metric-context">Held in the Vault on Solana</p>
             <p class="metric-date">Observation <time id="tbtc-date">—</time></p>
           </article>
           <article class="metric-card">
-            <p class="metric-label"><span class="metric-index">02</span> Verified burn</p>
+            <p class="metric-label">Verified burn</p>
             <p class="metric-value"><span id="burn-value">—</span> <small>NUMMUS</small></p>
             <p class="metric-context">Cumulatively burned on-chain</p>
             <p class="metric-date">Last burn <time id="burn-date">—</time></p>
+          </article>
+          <article class="metric-card supply-card">
+            <p class="metric-label">Fixed original supply</p>
+            <p class="metric-value">100,000,000 <small>NUMMUS</small></p>
+            <p class="metric-context">Fully released to the market</p>
+            <p class="metric-date">No VC allocation · No scheduled unlocks</p>
           </article>
         </div>
       </section>
 
       <footer class="footer">
+        <nav class="links" id="external-links" aria-label="Official links"></nav>
         <div class="verification">
           <p><span class="seal" aria-hidden="true">✓</span> Treasury and burn data sourced from verified on-chain records.</p>
           <p class="status" id="data-status" role="status" aria-live="polite"><span></span> Loading verified data…</p>
         </div>
-        <nav class="links" id="external-links" aria-label="Official links"></nav>
       </footer>
     </main>
-    <script type="module" src="./app.js?v=20260905-3"></script>
+    <script type="module" src="./app.js?v=20260905-4"></script>
   </body>
 </html>
