@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: update-nummus-data
@@ -16,6 +18,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      data_changed: ${{ steps.commit.outputs.data_changed }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -40,15 +44,53 @@ jobs:
         run: npm run build
 
       - name: Commit changed snapshot
+        id: commit
         shell: bash
         run: |
           set -euo pipefail
           if git diff --quiet -- data/latest.json; then
             echo "Dataset is not newer; nothing to commit."
+            echo "data_changed=false" >> "${GITHUB_OUTPUT}"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/latest.json
           git commit -m "Update NUMMUS treasury data"
-          git push
+          git push origin HEAD:main
+          echo "data_changed=true" >> "${GITHUB_OUTPUT}"
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.data_changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out updated main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
