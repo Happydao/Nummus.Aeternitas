@@ -120,7 +120,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
 
 @media (max-width: 680px) {
   .shell { padding: 12px 14px 14px; gap: 10px; }
-  .page-art img { object-position: 66% center; }
+  .page-art img { object-position: 48% center; }
   .page-art::after { background: linear-gradient(0deg, rgba(3,12,16,.96) 0%, rgba(3,12,16,.72) 58%, rgba(3,12,16,.42) 100%); }
   .masthead { align-items: flex-start; }
   .masthead { min-height: 76px; }

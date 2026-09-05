@@ -8,7 +8,7 @@ await mkdir(new URL("data/", output), { recursive: true });
 for (const file of ["index.html", "styles.css", "app.js", "data-utils.js"]) {
   await cp(new URL(`../${file}`, import.meta.url), new URL(file, output));
 }
-for (const file of ["nummus-logo.png", "favicon.png", "og.png", "vault-hero.jpg"]) {
+for (const file of ["nummus-logo.png", "favicon.png", "og.png", "vault-hero.jpg", "vault-hero-v2.jpg"]) {
   await cp(new URL(`../assets/${file}`, import.meta.url), new URL(`assets/${file}`, output));
 }
 await cp(new URL("../data/latest.json", import.meta.url), new URL("data/latest.json", output));
