@@ -20,8 +20,14 @@ for (const item of LINKS.filter(({ url }) => Boolean(url))) {
 }
 
 function render({ snapshot, source, stale }) {
-  document.querySelector("#tbtc-value").textContent = formatAmount(snapshot.tbtcAmount, 8);
-  document.querySelector("#burn-value").textContent = formatAmount(snapshot.nummusBurned, 6);
+  const tbtcValue = document.querySelector("#tbtc-value");
+  const burnValue = document.querySelector("#burn-value");
+  tbtcValue.textContent = formatAmount(snapshot.tbtcAmount, 4);
+  burnValue.textContent = formatAmount(snapshot.nummusBurned, 0);
+  tbtcValue.title = `Exact verified value: ${snapshot.tbtcAmount} tBTC`;
+  burnValue.title = `Exact verified value: ${snapshot.nummusBurned} NUMMUS`;
+  tbtcValue.setAttribute("aria-label", `${snapshot.tbtcAmount} tBTC`);
+  burnValue.setAttribute("aria-label", `${snapshot.nummusBurned} NUMMUS`);
   document.querySelector("#tbtc-date").textContent = formatDate(snapshot.tbtcDate);
   document.querySelector("#burn-date").textContent = formatDate(snapshot.lastBurnDate);
 
