@@ -44,8 +44,8 @@ a { color: inherit; }
 .brand-name { display: grid; gap: 7px; color: var(--ink); font-size: clamp(1.45rem, 1.85vw, 2rem); line-height: .92; letter-spacing: .3em; }
 .network-stack { margin: 5px 0 0; }
 .network { margin: 0; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .18em; }
-.network span, .status span { display: inline-block; width: 6px; height: 6px; margin-right: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(220,192,120,.09); }
-.governance { margin: 12px 0 0 15px; color: #82918d; font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; }
+.network > span:first-child, .status span { display: inline-block; width: 6px; height: 6px; margin-right: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(220,192,120,.09); }
+.governance { color: #82918d; font-size: .8em; letter-spacing: .15em; }
 .governance a { color: var(--gold-pale); text-decoration: none; }
 .governance a:hover { color: var(--ink); }
 
