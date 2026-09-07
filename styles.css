@@ -129,12 +129,14 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .shell { display: block; height: auto; min-height: 100dvh; overflow: visible; padding: 20px 18px 26px; }
   .page-art::after { content: ""; position: absolute; inset: 0; background: rgba(3,12,16,.48); }
   .page-art img { object-position: 48% center; transform: translateX(2vw) scale(1.08); }
-  .masthead { min-height: 0; align-items: flex-start; }
+  .masthead { display: block; min-height: 0; }
   .brand { gap: 16px; margin-top: 0; }
   .brand img { width: 92px; outline-offset: 4px; }
   .brand-name { gap: 5px; font-size: .94rem; letter-spacing: .16em; }
-  .network-stack { display: none; }
-  .hero { display: block; height: auto; min-height: 0; margin-top: 58px; }
+  .network-stack { display: block; margin: 30px 0 0 2px; }
+  .network { font-size: .55rem; letter-spacing: .12em; white-space: nowrap; }
+  .governance { margin-top: 10px; font-size: .52rem; letter-spacing: .12em; }
+  .hero { display: block; height: auto; min-height: 0; margin-top: 38px; }
   .eyebrow { margin-bottom: 16px; font-size: .62rem; letter-spacing: .24em; }
   h1 { font-size: clamp(2.65rem, 12.5vw, 3.5rem); line-height: .92; }
   .intro { margin-top: 24px; max-width: 100%; font-size: .94rem; line-height: 1.6; }
