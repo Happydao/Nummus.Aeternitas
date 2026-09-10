@@ -2,6 +2,7 @@ import { formatAmount, formatDate, loadLatestSnapshot } from "./data-utils.js";
 
 const LINKS = [
   { label: "Institutional Metrics Dashboard", url: "https://happydao.github.io/nummus-nav-dashboard/", primary: true },
+  { label: "Engine", url: "https://happydao.github.io/nummus.engine/", engine: true },
   { label: "Buy on Jupiter", url: "https://jup.ag/tokens/9JK2U7aEkp3tWaFNuaJowWRgNys5DVaKGxWk73VT5ray" },
   { label: "X", url: "https://x.com/NummusMemeCoin", compact: true },
   { label: "Telegram", url: "https://t.me/nummusmemecoin" },
@@ -20,6 +21,7 @@ for (const item of LINKS.filter(({ url }) => Boolean(url))) {
   anchor.textContent = item.label;
   if (item.primary) anchor.classList.add("is-primary");
   if (item.compact) anchor.classList.add("is-compact");
+  if (item.engine) anchor.classList.add("is-engine");
   links.append(anchor);
 }
 

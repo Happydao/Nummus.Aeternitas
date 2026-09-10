@@ -87,8 +87,10 @@ h1 em { color: var(--gold-pale); font-weight: 400; }
 .links a.is-compact { min-width: 0; }
 .links a:hover { color: var(--gold-pale); border-color: var(--line); background: rgba(220,192,120,.06); }
 .links a:hover { transform: translateY(-2px); }
-.links a.is-primary { order: 2; min-width: 290px; margin-left: auto; padding: 17px 28px; border-color: var(--gold); color: #091317; background: linear-gradient(135deg, var(--gold-pale), #c9a85c); box-shadow: 0 10px 34px rgba(220,192,120,.18); }
+.links a.is-primary { order: 3; min-width: 290px; margin-left: 0; padding: 17px 28px; border-color: var(--gold); color: #091317; background: linear-gradient(135deg, var(--gold-pale), #c9a85c); box-shadow: 0 10px 34px rgba(220,192,120,.18); }
 .links a.is-primary:hover { color: #050b0d; border-color: #f8e9bd; background: linear-gradient(135deg, #fff1c9, #d7b76d); }
+.links a.is-engine { order: 2; min-width: 203px; margin-left: auto; padding: 12px 20px; font-size: .5rem; letter-spacing: .09em; border-color: var(--gold); color: #091317; background: linear-gradient(135deg, var(--gold-pale), #c9a85c); box-shadow: 0 7px 24px rgba(220,192,120,.18); }
+.links a.is-engine:hover { color: #050b0d; border-color: #f8e9bd; background: linear-gradient(135deg, #fff1c9, #d7b76d); }
 .contract { display: grid; justify-items: end; gap: 6px; margin: 0; color: #82918d; text-align: right; }
 .contract span { font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; }
 .contract code { color: #b8c2be; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .68rem; letter-spacing: .035em; }
@@ -154,6 +156,7 @@ a:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 4px; }
   .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 10px; }
   .links a, .links a:not(.is-primary), .links a.is-compact { width: 100%; min-width: 0; min-height: 44px; padding: 12px 8px; font-size: .58rem; }
   .links a.is-primary { order: 0; grid-column: 1 / -1; margin-left: 0; padding: 15px 12px; font-size: .64rem; }
+  .links a.is-engine { order: 1; grid-column: 1 / -1; margin-left: 0; padding: 11px 12px; font-size: .56rem; }
   .links a:last-child { grid-column: 1 / -1; }
   .footer-meta { flex-direction: column; align-items: stretch; gap: 22px; margin-top: 24px; padding-top: 18px; }
   .verification p { font-size: .67rem; line-height: 1.5; }
